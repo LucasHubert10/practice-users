@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/LucasHubert10/practice-users/issues"
   },
-  "homepage": "https://github.com/LucasHubert10/practice-users#readme"
+  "homepage": "https://github.com/LucasHubert10/practice-users#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
