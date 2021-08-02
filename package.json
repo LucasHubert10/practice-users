@@ -1,0 +1,19 @@
+{
+  "name": "practice-users",
+  "version": "1.0.0",
+  "description": "RestAPI about create, update and get users.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasHubert10/practice-users.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasHubert10/practice-users/issues"
+  },
+  "homepage": "https://github.com/LucasHubert10/practice-users#readme"
+}
