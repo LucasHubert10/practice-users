@@ -8,13 +8,33 @@ var newUserID = 1000
 var usersDB = {}
 
 app.post('/users', (req, res) =>{
-    // Condition data nickname
+    // Conditions data nickname
     if(!req.body || !req.body.nickname || typeof req.body.nickname != "string" || req.body.nickname.length === 0 ){
         res.sendStatus(400)
         return
     }
 
     // Create new user
+
+    var existNickname = false;
+
+    console.log("users database", usersDB)
+
+    for (var userID in usersDB){
+        let user = usersDB[userID]
+       console.log(userID + "=" + user)
+
+       if (user.nickname == req.body.nickname) {
+           existNickname = true
+           break
+       }
+    }
+
+    if (existNickname) {
+        res.status(400).json({"error": "Usuario ya existente"})
+        return
+    }
+
     var newUser = {
         id: newUserID,
         nickname: req.body.nickname
@@ -22,7 +42,7 @@ app.post('/users', (req, res) =>{
 
     // Persist user
     usersDB[newUserID] = newUser
-
+ 
     // Change unique ID
     newUserID++
     res.status(201).json(newUser)
